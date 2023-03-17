@@ -65,6 +65,7 @@ h2{
   font-family: "Joseffin+Sans";
   font-size: 2.5em;
   margin: 0.5rem auto;
+  line-height: 1.5em;
 }
 h3 {
   text-align: center;
@@ -82,6 +83,7 @@ h3 {
         background: rgb(223,196,225);
         background: linear-gradient(90deg, rgba(223,196,225,1) 0%, rgba(131,206,225,1) 86%);
         padding: 15px 32px;
+        margin: 2.5rem;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -90,4 +92,7 @@ h3 {
         border-radius: 50px;
         width: 200px;
 }
+  .nav{
+    position: fixed top;
+  }
 </style>

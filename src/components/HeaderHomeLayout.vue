@@ -16,7 +16,7 @@
 
 
 export default {
-    name: "HeaderLayout",
+    name: "HeaderHomeLayout",
     data() {
         return {
             
@@ -32,7 +32,6 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    
     }
     .presentation-container{
         height: 100vh;

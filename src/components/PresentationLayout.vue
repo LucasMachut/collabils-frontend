@@ -38,8 +38,12 @@ export default {
         width:40%;
         border-radius: 50%;
         box-shadow: rgba(139, 199, 210, 0.663) 0px 4px 6px -1px, rgba(221, 150, 244, 0.502) 0px 2px 4px -1px;
+        margin: 5%;
         }
     .presentation-image img{
         width:100%;
+    }
+    a {
+        margin: 5rem;
     }
 </style>

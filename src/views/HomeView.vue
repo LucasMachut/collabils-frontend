@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <HeaderLayout/>
+    <NavLayout/>
+    <HeaderHomeLayout/>
     <main class="main-container">
       <PresentationLayout/>
     </main>
@@ -10,14 +11,16 @@
 
 <script>
 // @ is an alias to /src
-import HeaderLayout from "@/components/HeaderLayout";
+import NavLayout from '@/components/NavLayout.vue';
+import HeaderHomeLayout from "@/components/HeaderHomeLayout";
 import PresentationLayout from '../components/PresentationLayout.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    HeaderLayout,
+    HeaderHomeLayout,
     PresentationLayout,
+    NavLayout,
   }
 }
 </script>
