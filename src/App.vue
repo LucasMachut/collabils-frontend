@@ -13,15 +13,15 @@
     margin: 0;
     padding: 0;
     color: aliceblue;
-    background-color: #17132B;
   }
-
+  body{
+    background-color: #17132B;
+    font-family: "Rambla";
+    font-size: medium;
+    line-height: 2em;
+  }
   article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
-  }
-
-  body {
-    line-height: 1;
   }
 
   ol, ul {
@@ -42,11 +42,7 @@
     border-spacing: 0;
   }
 
-html, body {
-  font-family: Montserrat, Arial;
-  font-size: 14px;
-  line-height: 1.4;
-}
+
 
 * {
   box-sizing: border-box;
@@ -67,25 +63,31 @@ h1{
 h2{
   text-align: center;
   font-family: "Joseffin+Sans";
-  text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 2.5em;
   margin: 0.5rem auto;
 }
 h3 {
   text-align: center;
 }
 
-
-
-h2 {
-  margin: 1rem auto .5rem;
-  font-size: 1.2rem;
-}
 .main-container {
-  width: 90%;
+  width: 100%;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+.bouton1 {
+        background: rgb(223,196,225);
+        background: linear-gradient(90deg, rgba(223,196,225,1) 0%, rgba(131,206,225,1) 86%);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 50px;
+        width: 200px;
 }
 </style>

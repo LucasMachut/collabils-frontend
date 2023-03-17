@@ -2,8 +2,8 @@
     <header class="header">
         <div class="presentation-container">
             <h1>Collabils</h1>
-            <h2>Site de collaboratif de recherche et partage de lexique en langue des signes française</h2>
-            <a href="page-de-connexion.html"><button class="bouton">Se connecter</button></a>
+            <h2>Site collaboratif de recherche et partage de lexique en langue des signes française</h2>
+            <a href="page-de-connexion.html"><button class="bouton1">Se connecter</button></a>
 
         </div>
         <div class="image-container">
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 
 export default {
     name: "HeaderLayout",
@@ -34,13 +35,14 @@ export default {
     
     }
     .presentation-container{
-        height: 100%;
-        width: 60%;
+        height: 100vh;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         padding: 5%;
+        margin: 10%;
     }
     .image-container{
         width: 40%;
@@ -50,18 +52,5 @@ export default {
     .image-container img{
         width: 100%;
     }
-    .bouton {
-        background: rgb(223,196,225);
-        background: linear-gradient(90deg, rgba(223,196,225,1) 0%, rgba(131,206,225,1) 86%);
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 50px;
-        width: 200px;
-}
-
 
 </style>
