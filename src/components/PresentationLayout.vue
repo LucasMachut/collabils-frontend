@@ -43,7 +43,5 @@ export default {
     .presentation-image img{
         width:100%;
     }
-    a {
-        margin: 5rem;
-    }
+    
 </style>
