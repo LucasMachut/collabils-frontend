@@ -80,8 +80,8 @@ h3 {
   padding-bottom: 5rem;
 }
 .bouton1 {
-        background: rgb(223,196,225);
-        background: linear-gradient(90deg, rgba(223,196,225,1) 0%, rgba(131,206,225,1) 86%);
+  background: rgb(242,139,0);
+background: linear-gradient(180deg, rgba(242,139,0,1) 70%, rgba(242,37,47,1) 98%);
         padding: 15px 32px;
         margin: 2.5rem;
         text-align: center;
@@ -92,7 +92,5 @@ h3 {
         border-radius: 50px;
         width: 200px;
 }
-  .nav{
-    position: fixed top;
-  }
+  
 </style>
