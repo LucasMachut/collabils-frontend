@@ -1,9 +1,18 @@
 import axios from 'axios';
 
-const API_URL = 'https://collabils.local/wp-json/wp/v2';
+const apiClient = axios.create({
+    baseURL: 'http://collabils.local/wp-json/wp/v2',
+    headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+    },
+    timeout: 10000
+});
 
 export default {
-  getPostsByCategory(categoryId) {
-    return axios.get(`${API_URL}/posts?categories=${categoryId}`);
-  },
-};
+    // Recupere la liste de toutes les recettes avec les metadonnées
+    async findAll() {
+        const response = await apiClient.get('/posts?_embed');
+        return response.data;
+    }
+}

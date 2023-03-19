@@ -19,6 +19,11 @@ const routes = [
     name: 'signs',
     component: SignsView
   },
+  {
+    path: '/signs',
+    name: 'signs',
+    component: SignsView
+  }
 ]
 
 const router = createRouter({
@@ -27,3 +32,5 @@ const router = createRouter({
 })
 
 export default router
+
+

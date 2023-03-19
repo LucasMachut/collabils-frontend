@@ -1,46 +1,69 @@
 <template>
-    <div class="posts">
-      <div v-for="post in posts" :key="post.id" class="post">
-        <h2>{{ post.title.rendered }}</h2>
-        <div v-html="post.content.rendered"></div>
-      </div>
+    <h1>Rechercher un signe</h1>
+    <input type="text" v-model="searchString">
+
+    <div class="container">
+        <SignLayout v-bind:id="sign.id" v-bind:title="sign.title.rendered" v-for="sign in signsList" v-bind:key="sign.id"/>
     </div>
-  </template>
-  
-  <script>
-  import postService from '@/services/SignsService';
-  
-  export default {
-    name: 'SignsLayout',
+</template>
+
+<script>
+//._embedded.wp:featuredmedia[0].source_url
+import SignLayout from './SignLayout.vue';
+import SignsService from '@/services/SignsService';
+
+export default {
+    components: { 
+        SignLayout
+    },
+    name: "SignsLayout",
+    // Contient le code executé avant que le composant soit mounted
+    async mounted() {
+        console.log('MOUNTED');
+        // Contient la liste des recettes renvoyées par notre API
+        this.signs = await SignsService.findAll();
+    },
+    computed: {
+        signsList() {
+            // Renvoit un tableau qui contient les lignes ou la callback a renvoyé true
+            return this.signs.filter((sign) => {
+                // On prend le titre de la recette en cours et on verifie si le terme recherché
+                // Est contenue dans ce titre.
+                // Si oui, on renvoit true
+                if(sign.title.rendered.toLowerCase().includes(this.searchString.toLowerCase())) {
+                    return true;
+                } else {
+                    return false;
+                    // On verifie que dans la liste des ingredients, il y en a un qui
+                    // correspond au champ de recherche
+                    //return recipe.ingredients.find(ingredient => ingredient.toLowerCase().includes(this.searchString.toLowerCase()));
+                }
+            });
+        }
+    },
     data() {
-      return {
-        posts: [],
-      };
-    },
-    mounted() {
-      this.loadPosts();
-    },
-    methods: {
-      loadPosts() {
-        const categoryId = this.$route.params.id;
-        postService.getPostsByCategory(categoryId).then(response => {
-          this.posts = response.data;
-        });
-      },
-    },
-  };
-  </script>
-  
-  <style>
-  .posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
-  }
-  
-  .post {
-    border: 1px solid black;
-    padding: 20px;
-  }
-  </style>
-  
+        return {
+            searchString: "",
+            signs: []
+        }
+    }
+}
+</script>
+
+<style scoped>
+    .container{
+        width: 80%;
+        margin: 5em auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    input{
+        width: 50%;
+        height: 2rem;
+        margin: 5rem auto;
+        display: block;    
+        display: flex;
+
+}
+</style>
