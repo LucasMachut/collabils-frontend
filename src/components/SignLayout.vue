@@ -1,8 +1,9 @@
 <template>
     <article class="article">
-            <a href="#">
+        <router-link v-bind:to="{name: 'signs', params: {id: id}}">
                 <h2 v-html="title"></h2>
-            </a>
+        </router-link>
+
     </article>
 </template>
 

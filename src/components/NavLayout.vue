@@ -1,9 +1,9 @@
 <template>
   <nav :class="{ 'nav-show': showNav }">
-        <a href="#">Accueil</a>
-        <a href="#">Rechercher un signe</a>
-        <a href="#">Demander un signe</a>
-        <a href="#">Ajouter un signe</a>
+    <router-link v-bind:to="{name: 'home'}">Accueil</router-link>
+    <router-link v-bind:to="{name: 'signs'}">Rechercher un signe</router-link>
+
+
               <!--<router-link v-for="route in routes" v-bind:key="route.route" v-bind:to="{name: route.route}">{{ route.display }}</router-link>-->
   <!-- 
               <router-link v-bind:to="{name: 'home'}">Recipes list</router-link>
@@ -61,6 +61,10 @@
 }
 a{
     color: #F58E02;
+}
+.nav a.router-link-exact-active{
+  color: #00CDFF;
+  font-weight: bolder;
 }
 
 .nav-show {
