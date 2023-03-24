@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import CategoriesView from '../views/CategoriesView.vue'
-import SignsView from '../views/SignsView.vue'
+import CategListView from '../views/CategListView.vue'
+import SignesListView from '../views/SignesListView.vue'
+import SigneDetailView from '../views/SigneDetailView.vue'
 //import SignsByCategView from '../views/SignsByCategView.vue'
 
 const routes = [
@@ -13,28 +14,18 @@ const routes = [
   {
     path: '/category',
     name: 'category',
-    component: CategoriesView
+    component: CategListView
   },
   {
-    path: '/signs',
-    name: 'signs',
-    component: SignsView
+    path: '/signes',
+    name: 'signes',
+    component: SignesListView
   },
   {
-    path: '/sign/:id',
-    name: 'sign',
-    component: () => import(/* webpackChunkName: "recipe" */ '../views/SignDetailedView.vue')
+    path: '/signedetail/:id',
+    name: 'signeDetail',
+    component: SigneDetailView
   },
-  {
-    path: '/registration',
-    name: 'registration',
-    component: () => import(/* webpackChunkName: "registration" */ '../views/RegistrationView.vue')
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/LoginView.vue')
-  }
 ]
 
 const router = createRouter({
