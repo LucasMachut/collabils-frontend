@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CategoriesView from '../views/CategoriesView.vue'
 import SignsView from '../views/SignsView.vue'
-import SignsByCategView from '../views/SignsByCategView.vue'
+//import SignsByCategView from '../views/SignsByCategView.vue'
 
 const routes = [
   {
@@ -16,19 +16,14 @@ const routes = [
     component: CategoriesView
   },
   {
-    path: '/category',
-    name: 'category',
-    component: CategoriesView
-  },
-  {
-    path: '/category/:id',
-    name: 'signs',
-    component: SignsByCategView
-  },
-  {
     path: '/signs',
     name: 'signs',
     component: SignsView
+  },
+  {
+    path: '/sign/:id',
+    name: 'sign',
+    component: () => import(/* webpackChunkName: "recipe" */ '../views/SignDetailedView.vue')
   },
   {
     path: '/registration',

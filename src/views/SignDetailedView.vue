@@ -2,15 +2,15 @@
     <div class="home">
       <NavLayout/>
       <main class="main-container">
-          <SignDetailLayout/>
+          <SignDetailedLayout/>
       </main>
     </div>
   </template>
   
   <script>
   // @ is an alias to /src
-  import HeaderLayout from "@/components/template/NavLayout";
-  import RecipeDetailLayout from '@/components/SignDetailedLayout';
+  import SignDetailedLayout from '@/components/SignDetailedLayout';
+  import NavLayout from '@/components/SignDetailedLayout';
   
   export default {
     name: 'SignDetailedView',

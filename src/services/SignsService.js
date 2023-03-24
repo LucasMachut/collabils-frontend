@@ -12,7 +12,7 @@ const apiClient = axios.create({
 export default {
     // Recupere la liste de toutes les recettes avec les metadonnées
     async findAll() {
-        const response = await apiClient.get('/posts?_embed');
+        const response = await apiClient.get('/signes?_embed');
         return response.data;
     }
 }

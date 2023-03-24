@@ -4,13 +4,17 @@
           <p v-for="error in errors" v-bind:key="error">{{error}}</p>
       </div>
       <fieldset>
+        <div class="field">
+            <label class="field__label">Pseudo</label>
+            <input class="field__input" v-model="pseudo" type="text" placeholder="johndoe">
+        </div>
           <div class="field">
             <label for="lastname">Nom:</label>
-            <input type="text" id="lastname" v-model="name">
+            <input type="text" id="lastname" v-model="lastname">
           </div>
          <div class="field">
             <label for="firstname">Prénom:</label>
-            <input type="text" id="firstname" v-model="surname">
+            <input type="text" id="firstname" v-model="firstname">
          </div>
          <div class="field">
             <label for="email">Email:</label>
@@ -25,8 +29,8 @@
             <input class="field__input" v-model="confPassword" type="password" placeholder="Confirm password">
         </div>
          <div class="field">
-            <label for="profession">Profession:</label>
-            <select id="profession" v-model="profession">
+            <label for="role">Profession:</label>
+            <select id="role" v-model="role">
                 <option value="Interprète">Interprète</option>
                 <option value="Intermédiateur">Intermédiateur</option>
                 <option value="Traducteur">Traducteur</option>
@@ -56,13 +60,14 @@
       data() {
           return {
               errors: [],
+              pseudo: null,
               email: null,
               firstname: null,
               lastname: null,
               password: null,
               diplomaDate: null,
               diplomaType: null,
-              profession: null
+              role: null
           }
       },
       methods: {
@@ -72,13 +77,16 @@
               if(!this.email) {
                   this.errors.push("Email cannot be empty");
               }
+              if(!this.pseudo) {
+                  this.errors.push("Pseudo cannot be empty");
+              }
               if(!this.firstname) {
                   this.errors.push("Firstname cannot be empty");
               }
               if(!this.lastname) {
                   this.errors.push("Lastname cannot be empty");
               }
-              if(!this.profession) {
+              if(!this.role) {
                   this.errors.push("Profession cannot be empty");
               }
               if(!this.diplomaDate) {
