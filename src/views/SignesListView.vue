@@ -11,7 +11,7 @@
 <script>
 // @ is an alias to /src
 import NavLayout from '@/components/NavLayout.vue';
-import SignesList from '../components/SignesList.vue';
+import SignesList from '@/components/SignesList.vue';
 
 export default {
     name: 'SignesListView',

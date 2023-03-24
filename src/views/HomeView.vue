@@ -13,7 +13,7 @@
 // @ is an alias to /src
 import NavLayout from '@/components/NavLayout.vue';
 import HeaderHomeLayout from "@/components/HeaderHomeLayout";
-import PresentationLayout from '../components/PresentationLayout.vue';
+import PresentationLayout from '@/components/PresentationLayout.vue';
 
 export default {
   name: 'HomeView',

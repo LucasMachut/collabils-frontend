@@ -12,7 +12,7 @@
     </div>
   </template>
   <script>
-  import signesService from "@/services/SignService.js";
+  import SignService from "@/services/SignService.js";
   
   export default {
     name: "AllSignes",
@@ -23,7 +23,7 @@
       };
     },
     async created() {
-      this.signes = await signesService.findAll();
+      this.signes = await SignService.findAll();
     },
     computed: {
       signesFiltered() {

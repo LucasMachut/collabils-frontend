@@ -10,7 +10,7 @@
     </div>
   </template>
   <script>
-  import signesService from "@/services/SignsService.js";
+  import SignService from "@/services/SignService.js";
   
   export default {
     name: "SigneLayout",
@@ -21,7 +21,7 @@
     },
     async created() {
       const signeId = this.$route.params.id;
-      this.signe = await signesService.getSigneById(signeId);
+      this.signe = await SignService.getSigneById(signeId);
     },
   };
   </script>
