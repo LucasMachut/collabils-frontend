@@ -1,7 +1,7 @@
 <template>
   <nav :class="{ 'nav-show': showNav }">
     <router-link v-bind:to="{name: 'home'}">Accueil</router-link>
-    <router-link v-bind:to="{name: 'signs'}">Rechercher un signe</router-link>
+    <router-link v-bind:to="{name: 'signes'}">Rechercher un signe</router-link>
 
 
               <!--<router-link v-for="route in routes" v-bind:key="route.route" v-bind:to="{name: route.route}">{{ route.display }}</router-link>-->
