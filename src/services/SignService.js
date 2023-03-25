@@ -15,13 +15,23 @@ export default {
     return response.data;
   },
 
-  async getSignesByCategoryId(categoryId) {
+  async getCategoryById(categoryId) {
+    const response = await apiClient.get(`/categories/${categoryId}`);
+    return response.data;
+  },
+
+  async getSignsByCategoryId(categoryId) {
     const response = await apiClient.get(`/signes/?categories=${categoryId}&_embed`);
     return response.data;
   },
 
-  async getSigneById(signeId) {
-    const response = await apiClient.get(`/signes/${ signeId }?_embed&meta_key=_signe_date,_signe_context,_signe_video`);
+  async getSignById(signId) {
+    const response = await apiClient.get(`/signes/${signId}?_embed&meta_key=_signe_date,_signe_context,_signe_video`);
+    return response.data;
+  },
+
+  async getAllSignes() {
+    const response = await apiClient.get("/signes");
     return response.data;
   },
 };
