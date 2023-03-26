@@ -34,4 +34,9 @@ export default {
     const response = await apiClient.get("/signes");
     return response.data;
   },
+
+  async findAll() {
+    const response = await apiClient.get('/signes?per_page=100&_embed');
+    return response.data;
+  }
 };
