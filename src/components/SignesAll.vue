@@ -1,15 +1,20 @@
 <template>
   <div class="signes-list">
     <h1>Tous les Signes</h1>
-    <ul>
-      <li v-for="signe in signes" :key="signe.id">
+    <div class="search-container">
+      <label for="search">Recherche : </label>
+      <input type="text" id="search" v-model="searchQuery">
+    </div>
+    <div class="display-signs-container">
+      <div class="sign-item" v-for="signe in filteredSignes" :key="signe.id">
         <a @click="showSigneDetails(signe.id)">
-          {{ signe.title }}
+          <h3>{{ signe.title }}</h3>
         </a>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
+
 <script>
 import SignService from '@/services/SignService.js';
 
@@ -18,10 +23,18 @@ export default {
   data() {
     return {
       signes: [],
+      searchQuery: ''
     };
   },
   async mounted() {
     this.signes = await SignService.findAll();
+  },
+  computed: {
+    filteredSignes() {
+      return this.signes.filter(signe => {
+        return signe.title.toLowerCase().includes(this.searchQuery.toLowerCase());
+      });
+    }
   },
   methods: {
     showSigneDetails(id) {
@@ -30,38 +43,34 @@ export default {
   },
 };
 </script>
+
 <style scoped>
-.signes-list {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px;
-  text-align: center;
-}
+  .search-container {
+    margin: 5em auto;
+    text-align: center;
+  }
 
-h1 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  margin-bottom: 15px;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-  font-size: 24px;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.2s ease-in-out;
-}
-
-a:hover {
-  border-bottom: 2px solid #333;
-}
+  .display-signs-container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .sign-item{
+    width: 20%;
+    height: 20vh;
+    border: solid 1px white;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sign-item:hover{
+    box-shadow: #FD3C00 0px 7px 29px 0px;
+    }
+  h3{
+    color: white;
+  }
 </style>
