@@ -6,27 +6,27 @@
       <fieldset>
         <div class="field">
           <label class="field__label">Nom</label>
-          <input class="field__input" v-model="nom" type="text" placeholder="Doe" @focus="selectField">
+          <input class="field__input" v-model="nom" type="text" @focus="selectField">
         </div>
         <div class="field">
           <label class="field__label">Prénom</label>
-          <input class="field__input" v-model="prenom" type="text" placeholder="John" @focus="selectField">
+          <input class="field__input" v-model="prenom" type="text" @focus="selectField">
         </div>
         <div class="field">
           <label class="field__label">Adresse e-mail</label>
-          <input class="field__input" v-model="email" type="email" placeholder="johndoe@example.com" @focus="selectField">
+          <input class="field__input" v-model="email" type="email" @focus="selectField">
         </div>
         <div class="field">
           <label class="field__label">Pseudo</label>
-          <input class="field__input" v-model="pseudo" type="text" placeholder="johndoe" @focus="selectField">
+          <input class="field__input" v-model="pseudo" type="text" @focus="selectField">
         </div>
         <div class="field">
           <label class="field__label">Mot de passe</label>
-          <input class="field__input" v-model="password" type="password" placeholder="Mot de passe" @focus="selectField">
+          <input class="field__input" v-model="password" type="password" @focus="selectField">
         </div>
         <div class="field">
           <label class="field__label">Confirmation du mot de passe</label>
-          <input class="field__input" v-model="confPassword" type="password" placeholder="Confirmation du mot de passe" @focus="selectField">
+          <input class="field__input" v-model="confPassword" type="password" @focus="selectField">
         </div>
         <div class="field">
           <label class="field__label">Rôle</label>
@@ -38,7 +38,7 @@
         </div>
         <div class="field">
           <label class="field__label">Université du diplôme</label>
-          <input class="field__input" v-model="universite" type="text" placeholder="Nom de l'université" @focus="selectField">
+          <input class="field__input" v-model="universite" type="text" @focus="selectField">
         </div>
         <div class="field">
           <label class="field__label">Date du diplôme</label>

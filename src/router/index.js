@@ -5,6 +5,8 @@ import SigneDetailView from "../views/SigneDetailView.vue";
 import CategDetailView from "../views/CategDetailView.vue";
 import SignesAllView from "../views/SignesAllView.vue";
 import RegistrationView from "../views/RegistrationView.vue";
+import LoginView from "../views/LoginView.vue";
+
 
 const routes = [
 {
@@ -41,6 +43,12 @@ props: true,
   component: RegistrationView,
   props: true
 },
+{
+  path: '/login',
+  name: 'login',
+  component: LoginView,
+  props: true
+}
 ];
 
 const router = createRouter({
