@@ -4,6 +4,7 @@ import CategListView from "../views/CategListView.vue";
 import SigneDetailView from "../views/SigneDetailView.vue";
 import CategDetailView from "../views/CategDetailView.vue";
 import SignesAllView from "../views/SignesAllView.vue";
+import RegistrationView from "../views/RegistrationView.vue";
 
 const routes = [
 {
@@ -33,6 +34,12 @@ path: "/signes",
 name: "signes",
 component: SignesAllView,
 props: true,
+},
+{
+  path: '/registration',
+  name: 'registration',
+  component: RegistrationView,
+  props: true
 },
 ];
 
